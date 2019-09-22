@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+#/build
+# Leave the build in for now so the reviewer can run this without installing node
 
 # misc
 .DS_Store
