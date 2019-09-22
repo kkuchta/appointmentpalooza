@@ -62,13 +62,6 @@ class SlotSelector extends React.Component<Props, {}> {
       }
       time.add(...INCREMENTS);
     }
-    // while time < (23:59 to utc)
-    //   while(last_slot && last_slot < time) { last_slot = last_slot.next }
-    //   while(last_slot && last_slot == time) {
-    //     slotsForThisPeriod << lastSlot
-    //   }
-    //   renderPossibleSlot(time, slotsForThisPeriod)
-    //   time += 30m
     return <div className='day' key={day.toISOString()}>
       <h3>{ day.format('dddd') }</h3>
       { periodElements }

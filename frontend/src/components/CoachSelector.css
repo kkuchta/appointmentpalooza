@@ -16,3 +16,6 @@
   border-radius: 5px;
   font-size: 14px;
 }
+.coachSelector button.selected {
+  font-weight: bold;
+}

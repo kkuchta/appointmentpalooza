@@ -5,25 +5,35 @@ type Props = {
   availableCoaches: any[],
   onCoachSelect: (coach: string) => void
 }
+type State = {
+  selectedCoach?: string
+}
 
-const CoachSelector: React.FC<Props> = (props) => {
-  const onCoachClick = (coach: string) => {
-    props.onCoachSelect(coach);
+class CoachSelector extends React.Component<Props, State> {
+  readonly state: State = {}
+  onCoachClick = (coach: string) => {
+    this.setState({ selectedCoach: coach })
+    this.props.onCoachSelect(coach);
   }
-  const renderCoachButton = (coach: string) => {
+  renderCoachButton = (coach: string) => {
+    const className = (this.state.selectedCoach === coach) ? 'selected' : '';
     return <div key={coach}>
-      <button onClick={() => onCoachClick(coach)}>{coach}</button>
+      <button onClick={() => this.onCoachClick(coach)} className={className}>
+        {coach}
+      </button>
     </div>;
   }
 
-  return (
-    <div className='coachSelector'>
-      <h2>Filter by coach</h2>
-      <div className='coachList'>
-        { props.availableCoaches.map((coach) => renderCoachButton(coach))}
+  render() {
+    return (
+      <div className='coachSelector'>
+        <h2>Filter by coach</h2>
+        <div className='coachList'>
+          { this.props.availableCoaches.map((coach) => this.renderCoachButton(coach))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default CoachSelector;

@@ -8,3 +8,4 @@
 {"start":"2019-09-26T13:30:00.000Z","coach":"Dr. Geovany Keebler"}
 {"start":"2019-09-24T20:00:00.000Z","coach":"Nola Murazik V"}
 {"start":"2019-09-25T17:00:00.000Z","coach":"Nola Murazik V"}
+{"start":"2019-09-23T14:30:00.000Z","coach":"Elyssa O'Kon"}
