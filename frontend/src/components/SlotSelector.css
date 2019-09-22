@@ -1,0 +1,10 @@
+.slotSelector, .slotSelector * {
+  display: flex
+}
+.slotSelector {
+  flex-direction: row;
+}
+.slotSelector .day {
+  flex-direction: column;
+  margin-left: 20px;
+}
