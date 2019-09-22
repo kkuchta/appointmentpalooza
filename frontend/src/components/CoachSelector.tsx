@@ -11,16 +11,17 @@ const CoachSelector: React.FC<Props> = (props) => {
     props.onCoachSelect(coach);
   }
   const renderCoachButton = (coach: string) => {
-    return <li key={coach}>
+    return <div key={coach}>
       <button onClick={() => onCoachClick(coach)}>{coach}</button>
-    </li>;
+    </div>;
   }
 
   return (
     <div className='coachSelector'>
-      <ul>
+      <h2>Filter by coach</h2>
+      <div className='coachList'>
         { props.availableCoaches.map((coach) => renderCoachButton(coach))}
-      </ul>
+      </div>
     </div>
   );
 }

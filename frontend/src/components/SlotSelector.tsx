@@ -31,10 +31,11 @@ class SlotSelector extends React.Component<Props, {}> {
 
   // Renders a clickable time, eg [12:30pm]
   renderPeriod(time: Moment.Moment, slots: Slot[]) {
-    return <div key={time.toISOString()} onClick={this.onPeriodClick(slots)}>
+    return <button key={time.toISOString()} onClick={this.onPeriodClick(slots)}>
       { time.format('h:mm a') }
-    </div>;
+    </button>;
   }
+
   renderDay(day: Moment.Moment) {
     const { slots } = this.props
     let time = day.clone().startOf('day');
@@ -69,7 +70,7 @@ class SlotSelector extends React.Component<Props, {}> {
     //   renderPossibleSlot(time, slotsForThisPeriod)
     //   time += 30m
     return <div className='day' key={day.toISOString()}>
-      { day.format('dddd') }
+      <h3>{ day.format('dddd') }</h3>
       { periodElements }
     </div>;
   }

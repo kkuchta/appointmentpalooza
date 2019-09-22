@@ -1,3 +1,18 @@
 .coachSelector {
+  display: flex;
   max-width: l00px;
+  flex-direction: column;
+  background-color: #edf0f5;
+}
+.coachSelector .coachList {
+  display: flex;
+  flex-direction: column;
+}
+.coachSelector button {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }
