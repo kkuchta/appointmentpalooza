@@ -5,16 +5,20 @@ type Props = {
   availableCoaches: any[],
   onCoachSelect: (coach: string) => void
 }
+
 type State = {
   selectedCoach?: string
 }
 
 class CoachSelector extends React.Component<Props, State> {
+
   readonly state: State = {}
+
   onCoachClick = (coach: string) => {
     this.setState({ selectedCoach: coach })
     this.props.onCoachSelect(coach);
   }
+
   renderCoachButton = (coach: string) => {
     const className = (this.state.selectedCoach === coach) ? 'selected' : '';
     return <div key={coach}>

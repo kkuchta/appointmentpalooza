@@ -4,6 +4,7 @@
   flex-direction: column;
   background-color: #edf0f5;
 }
+
 .coachSelector .coachList {
   display: flex;
   flex-direction: column;

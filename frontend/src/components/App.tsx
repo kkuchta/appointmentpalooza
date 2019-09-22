@@ -10,17 +10,23 @@ interface State {
   selectedCoach?: string
   selectedSlot?: Slot
 }
+
 class App extends React.Component<{}, State> {
   readonly state: State = {}
-  onCoachSelect = (coach: string) => {
-    console.log("Selected coach:", coach)
-    this.setState({ selectedCoach: coach });
-  }
+
   componentDidMount() {
+    // Load coach slots immediately
     Api.getSlots().then((slots) => {
       this.setState({ slots: slots });
     });
   }
+
+  onCoachSelect = (coach: string) => {
+    console.log("Selected coach:", coach)
+    this.setState({ selectedCoach: coach });
+  }
+
+  // Gets a list of coach names
   getCoaches = () => {
     const { slots } = this.state
 
@@ -31,6 +37,8 @@ class App extends React.Component<{}, State> {
     )
     return Array.from(coachSet);
   }
+
+  // Get all slots, filtered by the currently selected coach
   getSlots = () => {
     const slots = this.state.slots;
     if (slots == null) { return [] }
@@ -42,15 +50,18 @@ class App extends React.Component<{}, State> {
 
     return slots.filter((slot) => selectedCoach.includes(slot.coach));
   }
+
   onSlotSelect = (slot: Slot) => {
     console.log('selected', slot)
     // TODO: show a loading indicator here while we're saving so the user has
     // some feedback to know their click worked.
     Api.saveAppointment(slot).then(() => this.setState({selectedSlot: slot}))
   }
+
   renderLoading() {
     return <div>Loading...</div>
   }
+
   renderUI() {
     const { selectedSlot } = this.state
     if (selectedSlot == null) {
@@ -70,6 +81,7 @@ class App extends React.Component<{}, State> {
       </div>
     }
   }
+
   render() {
     return (
       <div className="App">
