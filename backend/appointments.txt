@@ -1,3 +1,4 @@
 {"start":"2019-09-25T14:00:00.000Z","coach":"Elyssa O'Kon"}
 {"start":"2019-09-26T16:30:00.000Z","coach":"Christy Schumm"}
 {"start":"2019-09-28T18:00:00.000Z","coach":"Natalia Stanton Jr."}
+{"start":"2019-09-26T15:00:00.000Z","coach":"Dr. Geovany Keebler"}
