@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 import CoachSelector from './CoachSelector';
 import SlotSelector from './SlotSelector';
 import Api, { Slot } from '../api'
@@ -58,8 +59,14 @@ class App extends React.Component<{}, State> {
         <SlotSelector slots={this.getSlots()} onSlotSelect={this.onSlotSelect} />
       </>
     } else {
-      return <div>
-        selectedSlot = { selectedSlot.coach }, { selectedSlot.start}
+      const formattedStart = Moment(selectedSlot.start).format('h:mma [on] dddd [the] Mo');
+      return <div className='appointmentMade'>
+        <div className='appointmentConfirmation'>
+          <h1>Your appointment is all set!</h1>
+          <p>
+            You'll be talking to <b>{ selectedSlot.coach }</b><br /> at <b>{ formattedStart }</b>.
+          </p>
+        </div>
       </div>
     }
   }
