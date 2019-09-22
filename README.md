@@ -2,6 +2,8 @@
 
 This is a scheduling app built on ruby+sinatra on the backend and typescript_react on the frontend.  I've included a production build of the frontend in `/build` to make it easier to test out if you don't have node set up on your local machine.
 
+This is a takehome test for an interview, not a project you should use.  :)
+
 ![preview gif](https://media.giphy.com/media/Ph0Nkk2aD3OE8VJxrb/giphy.gif)
 
 ## Prereqs
